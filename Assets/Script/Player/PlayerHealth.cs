@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int maxHealt = 3;
+    private int currentHealt;
+
+    public Image[] heartImages;
+
+    private void Awake()
+    {
+        currentHealt = maxHealt;
+        imangeHealt();
+    }
+
+    private void Update()
     {
         
     }
+    public void TakeDamage(int damage){
+        currentHealt -= damage;
+        imangeHealt();
+        if(currentHealt == 0){
+            Die();
+        }
+    }
+    private void imangeHealt(){
+        for(int i = 0; i < heartImages.Length; i++){
+            heartImages[i].enabled = (i < currentHealt);
+        }
+    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Die(){
+        Debug.Log("Игрок Умер");
+        Destroy(gameObject);
     }
 }
