@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class OpenDoor : MonoBehaviour
 {
     private Collider2D myCollider;
+    [SerializeField]private string scene;
     private void Awake()
     {
         myCollider = GetComponent<BoxCollider2D>();
@@ -18,7 +19,7 @@ public class OpenDoor : MonoBehaviour
             if(playerInv != null && playerInv.hasKey == true)
             {
                 myCollider.isTrigger = true;
-                SceneManager.LoadScene("VeiloFEChoesLevelTwo");
+                SceneManager.LoadScene(scene);
             }
             else
             {

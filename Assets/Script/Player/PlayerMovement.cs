@@ -10,7 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     [Header("Прыжок")]
     [SerializeField]private float JumpForce = 5f;
-    private bool IsGround;
+    [SerializeField]private Transform groundCheckPoint;
+    [SerializeField]private float groundCheckRadius = 0.2f;
+    [SerializeField]private LayerMask groundLayer;
+    private bool IsGrounded;
     [Header("Ключ")]
     private bool IsKeySpace;
     [Header("Анимация")]
@@ -22,16 +25,19 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        IsGround = true;
     }
     private void Update()
     {
         moveX = Input.GetAxis("Horizontal");
-        if(Input.GetKey(KeyCode.Space) && IsGround == true)
+        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        IsGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
+        animator.SetBool("IsGroundedAnim", IsGrounded);
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             IsKeySpace = true;
         }
-        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        Debug.Log("IsGrounded = " + IsGrounded);
+
     }
     private void FixedUpdate()
     {
@@ -52,20 +58,11 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(new Vector2(rb.velocity.x, JumpForce), ForceMode2D.Impulse);
-        IsGround = false;
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    void JumpResetAnim()
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGround = true;
-        }
+        animator.SetBool("IsGroundedAnim", true); 
     }
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            IsGround = false;
-        }
-    }
+
 }
+

@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 42098ca5542dcb040b228df1af6cab59
+  - enabled: 1
     path: Assets/Scenes/VeiloFEChoesLevelOne.unity
     guid: fcb49dbbbf47f164987093c15134f08c
   - enabled: 1
     path: Assets/Scenes/VeiloFEChoesLevelTwo.unity
     guid: da3ccb7f7f0cf0743a3e9dfc566f47f7
+  - enabled: 1
+    path: Assets/Scenes/VeiloFEChoesLevelThree.unity
+    guid: daad69ce127f14f48925e104a0809b52
+  - enabled: 1
+    path: Assets/Scenes/VeiloFEChoesLevelFour.unity
+    guid: a25f3658433acc3458b341f61eb84bb6
   m_configObjects: {}
