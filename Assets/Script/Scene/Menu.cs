@@ -9,6 +9,10 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("VeiloFEChoesLevelOne");
     }
+    public void TouchSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
     public void TouchExit()
     {
         Application.Quit();

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 42098ca5542dcb040b228df1af6cab59
   - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 722955cd7ec617142a290d3c4e49a0da
+  - enabled: 1
     path: Assets/Scenes/VeiloFEChoesLevelOne.unity
     guid: fcb49dbbbf47f164987093c15134f08c
   - enabled: 1

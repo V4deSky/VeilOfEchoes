@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -35,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void Die(){
-        Debug.Log("Игрок Умер");
         Destroy(gameObject);
+        SceneManager.LoadScene("Menu"); // ВРЕМЕННО
     }
 }

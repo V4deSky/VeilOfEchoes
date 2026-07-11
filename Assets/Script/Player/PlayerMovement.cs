@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         {
             IsKeySpace = true;
         }
-        Debug.Log("IsGrounded = " + IsGrounded);
 
     }
     private void FixedUpdate()

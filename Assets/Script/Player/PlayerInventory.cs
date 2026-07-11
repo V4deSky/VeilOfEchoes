@@ -10,7 +10,6 @@ public class PlayerInventory : MonoBehaviour
     public void takeKey()
     {
         hasKey = true;
-        Debug.Log("Ключ подобран");
     }
 }
 
