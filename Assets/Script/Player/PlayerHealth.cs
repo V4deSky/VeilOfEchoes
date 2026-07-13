@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealt = 3;
     private int currentHealt;
+    [SerializeField]private GameObject death;
 
     public Image[] heartImages;
 
@@ -37,6 +37,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Die(){
         Destroy(gameObject);
-        SceneManager.LoadScene("Menu"); // ВРЕМЕННО
+        death.SetActive(true);
     }
 }

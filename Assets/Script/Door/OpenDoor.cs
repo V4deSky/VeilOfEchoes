@@ -19,7 +19,7 @@ public class OpenDoor : MonoBehaviour
             if(playerInv != null && playerInv.hasKey == true)
             {
                 myCollider.isTrigger = true;
-                SceneManager.LoadScene(scene);
+                SceneManager.LoadSceneAsync(scene);
             }
             else
             {

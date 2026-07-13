@@ -7,6 +7,6 @@ public class Setting1 : MonoBehaviour
 {
     public void TouchBack()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadSceneAsync("Menu");
     }
 }

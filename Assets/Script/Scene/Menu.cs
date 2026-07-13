@@ -7,11 +7,11 @@ public class Menu : MonoBehaviour
 {
     public void TouchPlay()
     {
-        SceneManager.LoadScene("VeiloFEChoesLevelOne");
+        SceneManager.LoadSceneAsync("VeiloFEChoesLevelOne");
     }
     public void TouchSettings()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadSceneAsync("Settings");
     }
     public void TouchExit()
     {
